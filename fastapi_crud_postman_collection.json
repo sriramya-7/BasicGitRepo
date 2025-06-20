@@ -1,0 +1,212 @@
+{
+    "info": {
+        "name": "FastAPI CRUD Application",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Simple API - Welcome Message",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/v1/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "v1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Student",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8000/v2/students/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "v2",
+                        "students"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"id\": 4,\n    \"name\": \"David Parker\",\n    \"age\": 16,\n    \"grade\": \"11th\",\n    \"email\": \"david@example.com\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Get All Students",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/v2/students/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "v2",
+                        "students"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Student by ID",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/v2/students/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "v2",
+                        "students",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Student",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:8000/v2/students/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "v2",
+                        "students",
+                        "1"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Updated Name\",\n    \"age\": 17,\n    \"grade\": \"12th\",\n    \"email\": \"updated@example.com\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Delete Student",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8000/v2/students/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "v2",
+                        "students",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Filter Students (Generic Parameter)",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/v2/students/filter/?param=value",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "v2",
+                        "students",
+                        "filter"
+                    ],
+                    "query": [
+                        {
+                            "key": "param",
+                            "value": "value"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Search Students",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/v2/search/?q=name",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "v2",
+                        "search"
+                    ],
+                    "query": [
+                        {
+                            "key": "q",
+                            "value": "name"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Student with Auth Token",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/v2/students/auth/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "v2",
+                        "students",
+                        "auth"
+                    ]
+                },
+                "header": [
+                    {
+                        "key": "X-Auth-Token",
+                        "value": "secret123"
+                    }
+                ]
+            }
+        }
+    ]
+}
